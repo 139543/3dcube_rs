@@ -1,0 +1,26 @@
+Java structure:
+Static utility class (likely not needed due to Rust not being a strictly object-oriented language
+Object encapsulating terminal position management
+Object encapsulating terminal color management
+Color class (Rust enums would be *great* here)
+Preset values for Color
+Object encapsulating interaction with stdin/read api
+Main draw loop
+
+TODO:
+Terminal struct
+    Position management modular component
+    Color management modular component
+    Data structure for screen
+    Drawing routine
+    Non-blocking read modular component (?)
+Cube draw helper
+    Creates and uses terminal struct internally
+    Includes methods for drawing lines, and giving them specified heights
+    Debug modular component (work this one out in Java first?)
+Main loop
+    Draws using cube draw helper
+    Handles input using terminal struct's input component
+
+What order should I do them in for MVP?
+    Modular components are easy to test
