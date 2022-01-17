@@ -9,8 +9,8 @@ Main draw loop
 
 TODO:
 Terminal struct
-    Position management modular component
-    Color management modular component
+    [DONE] Position management modular component
+    [DONE] Color management modular component
     Data structure for screen
     Drawing routine
     Non-blocking read modular component (?)
@@ -22,5 +22,8 @@ Main loop
     Draws using cube draw helper
     Handles input using terminal struct's input component
 
-What order should I do them in for MVP?
-    Modular components are easy to test
+Screen data structure needs Vec<Vec<Character>> due to arrays being fixed at compile-time.
+Since you can pattern-match None instead of throwing on access, it could actually work in this language
+    method to get subarray or create it if it doesn't exist
+        just pattern match Some() to Some(), and None to allocate the vec and return it
+    and that's it

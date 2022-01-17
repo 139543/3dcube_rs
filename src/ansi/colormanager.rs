@@ -1,5 +1,4 @@
 use super::Color;
-#[derive(Default)]
 pub struct ColorManager {
     fg: Color,
     bg: Color
@@ -26,6 +25,13 @@ impl ColorManager {
         } else {
             self.set_fg_color(color1);
             self.set_bg_color(color2);
+        }
+    }
+    pub fn new() -> Self {
+        print!("\x1B[30;40m");
+        ColorManager {
+            fg: Color::default(),
+            bg: Color::default()
         }
     }
 }
