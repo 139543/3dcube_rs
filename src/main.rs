@@ -1,4 +1,6 @@
+use cube3d_rs::ansi::PosManager;
 fn main() {
-    let test: i32 = 5;
     println!("Hello, world!");
+    let mut pos = PosManager::new();
+    pos.print("Hello, world!");
 }
