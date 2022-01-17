@@ -37,3 +37,28 @@ impl PosManager {
         count
     }
 }
+
+pub struct OffsetPosManager {
+    pos: PosManager,
+    x_offset: usize,
+    y_offset: usize
+}
+
+impl OffsetPosManager {
+    pub fn gotopos(&mut self, desired_x: usize, desired_y: usize) {
+        self.pos.gotopos(self.x_offset + desired_x, self.y_offset + desired_y)
+    }
+    pub fn rawgotopos(&mut self, desired_x: usize, desired_y: usize) {
+        self.pos.gotopos(desired_x, desired_y)
+    }
+    pub fn new() -> OffsetPosManager {
+        OffsetPosManager {
+            pos: PosManager::new(),
+            x_offset: 0,
+            y_offset: 0
+        }
+    }
+    pub fn print(&mut self, text: &str) -> usize {
+        self.pos.print(text)
+    }
+}
