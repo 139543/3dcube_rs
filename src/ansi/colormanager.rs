@@ -28,7 +28,4 @@ impl ColorManager {
             self.set_bg_color(color2);
         }
     }
-    pub fn new() -> Self {
-        Default::default()
-    }
 }

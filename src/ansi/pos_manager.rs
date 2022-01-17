@@ -61,4 +61,13 @@ impl OffsetPosManager {
     pub fn print(&mut self, text: &str) -> usize {
         self.pos.print(text)
     }
+    pub fn set_offset(&mut self, desired_x_offset: usize, desired_y_offset: usize) -> bool {
+        if self.x_offset == desired_x_offset && self.y_offset == desired_y_offset {
+            false
+        } else {
+            self.x_offset = desired_x_offset;
+            self.y_offset = desired_y_offset;
+            true
+        }
+    }
 }

@@ -1,4 +1,6 @@
+#[derive(Clone)]
 #[derive(Eq)]
+#[derive(PartialEq)]
 pub struct Color {
     main_code: String,
 }
@@ -17,16 +19,19 @@ impl Color {
     }
 }
 
-impl PartialEq for Color {
-    fn eq(&self, other: &Self) -> bool {
-        self.main_code == other.main_code
-    }
-}
-
 impl Default for Color {
     fn default() -> Self {
         Color {
             main_code: "0".to_string()
         }
     }
+}
+
+#[derive(Eq)]
+#[derive(PartialEq)]
+#[derive(Default)]
+#[derive(Clone)]
+pub struct Character {
+    fg_color: Color,
+    bg_color: Color
 }
